@@ -13,29 +13,34 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController@HomeIndex');
-Route::get('/todaynewexpenses', 'TodayExpensesController@TodayExpensesIndex');
-Route::get('/getexpensesdata', 'TodayExpensesController@getExpensesData');
-Route::post('/expensesdelete', 'TodayExpensesController@ExpenseDelete');
-Route::post('/expensedetails', 'TodayExpensesController@getExpenseDetailsData');
-Route::post('/expenseupdate', 'TodayExpensesController@ExpenseUpdate');
-Route::post('/expenseinsert', 'TodayExpensesController@ExpenseInsert');
+Route::get('/', 'HomeController@HomeIndex')->middleware('loginCheck');
+Route::get('/todaynewexpenses', 'TodayExpensesController@TodayExpensesIndex')->middleware('loginCheck');
+Route::get('/getexpensesdata', 'TodayExpensesController@getExpensesData')->middleware('loginCheck');
+Route::post('/expensesdelete', 'TodayExpensesController@ExpenseDelete')->middleware('loginCheck');
+Route::post('/expensedetails', 'TodayExpensesController@getExpenseDetailsData')->middleware('loginCheck');
+Route::post('/expenseupdate', 'TodayExpensesController@ExpenseUpdate')->middleware('loginCheck');
+Route::post('/expenseinsert', 'TodayExpensesController@ExpenseInsert')->middleware('loginCheck');
 
 
-Route::get('/thismonthewexpenses', 'ThisMonthExpensesController@ThisMonthExpensesIndex');
+Route::get('/thismonthewexpenses', 'ThisMonthExpensesController@ThisMonthExpensesIndex')->middleware('loginCheck');
 
-Route::get('/yearewexpenses', 'YearExpensesCOntroller@YearExpensesIndex');
+Route::get('/yearewexpenses', 'YearExpensesCOntroller@YearExpensesIndex')->middleware('loginCheck');
 
 
-Route::get('/janexpense', 'ThisMonthExpensesController@JanExpensesIndex');
-Route::get('/febexpense', 'ThisMonthExpensesController@FebExpensesIndex');
-Route::get('/marexpense', 'ThisMonthExpensesController@MarExpensesIndex');
-Route::get('/aprexpense', 'ThisMonthExpensesController@AprExpensesIndex');
-Route::get('/mayexpense', 'ThisMonthExpensesController@MayExpensesIndex');
-Route::get('/junexpense', 'ThisMonthExpensesController@JunExpensesIndex');
-Route::get('/julexpense', 'ThisMonthExpensesController@JulExpensesIndex');
-Route::get('/augexpense', 'ThisMonthExpensesController@AugExpensesIndex');
-Route::get('/sepexpense', 'ThisMonthExpensesController@SepExpensesIndex');
-Route::get('/octexpense', 'ThisMonthExpensesController@OctExpensesIndex');
-Route::get('/novexpense', 'ThisMonthExpensesController@NovExpensesIndex');
-Route::get('/decexpense', 'ThisMonthExpensesController@DecExpensesIndex');
+Route::get('/janexpense', 'ThisMonthExpensesController@JanExpensesIndex')->middleware('loginCheck');
+Route::get('/febexpense', 'ThisMonthExpensesController@FebExpensesIndex')->middleware('loginCheck');
+Route::get('/marexpense', 'ThisMonthExpensesController@MarExpensesIndex')->middleware('loginCheck');
+Route::get('/aprexpense', 'ThisMonthExpensesController@AprExpensesIndex')->middleware('loginCheck');
+Route::get('/mayexpense', 'ThisMonthExpensesController@MayExpensesIndex')->middleware('loginCheck');
+Route::get('/junexpense', 'ThisMonthExpensesController@JunExpensesIndex')->middleware('loginCheck');
+Route::get('/julexpense', 'ThisMonthExpensesController@JulExpensesIndex')->middleware('loginCheck');
+Route::get('/augexpense', 'ThisMonthExpensesController@AugExpensesIndex')->middleware('loginCheck');
+Route::get('/sepexpense', 'ThisMonthExpensesController@SepExpensesIndex')->middleware('loginCheck');
+Route::get('/octexpense', 'ThisMonthExpensesController@OctExpensesIndex')->middleware('loginCheck');
+Route::get('/novexpense', 'ThisMonthExpensesController@NovExpensesIndex')->middleware('loginCheck');
+Route::get('/decexpense', 'ThisMonthExpensesController@DecExpensesIndex')->middleware('loginCheck');
+
+
+Route::get('/login', 'LoginController@LoginIndex');
+Route::post('/onLogin', 'LoginController@UserLogin');
+Route::get('/logout', 'LoginController@UserLogout');

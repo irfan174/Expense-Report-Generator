@@ -19,7 +19,7 @@
 </head>
 <body class="fix-header fix-sidebar">
 
-@include('Layout.menu')
+
 
 
 @yield('content')
