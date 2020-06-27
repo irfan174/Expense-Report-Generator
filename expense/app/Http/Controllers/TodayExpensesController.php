@@ -4,14 +4,26 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ExpensesModel;
+use PDF;
 class TodayExpensesController extends Controller
 {
     function TodayExpensesIndex(){
-
-    	
-    	return view('TodayExpenses');
+        $date = date("d/m/y");
+    	$allExpensesData = json_encode(ExpensesModel::where('date','=',$date)->get());
+    	return view('TodayExpenses',['todayExpenseDataKey'=>$allExpensesData]);
     	
       	
+    }
+
+    //pdf converter
+    function pdfGenerator(){
+        $date = date("d/m/y");
+        $allExpensesData = json_encode(ExpensesModel::where('date','=',$date)->get());
+
+        $pdf = PDF::loadView('TodayExpenses', compact('allExpensesData'));
+  
+        return $pdf->download('TodayExpenses.pdf');
+
     }
 
     //expenses section; get all data from database and send to script section in getExpensesJsonData function

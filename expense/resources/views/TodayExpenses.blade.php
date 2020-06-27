@@ -42,7 +42,8 @@
   </tbody>
 
 </table>
-		
+	<a href="{{url('/pdfgenerator')}}" class="btn btn-danger"><span> <i class="fas fa-file-pdf"></i> </span>Download PDF</a>
+  <a href="{{url('/pdfgeneratorhtml')}}" class="btn btn-warning"><span> <i class="fas fa-file-pdf"></i> </span>Download PDF Demo</a>
 
 </div>
 

@@ -20,6 +20,9 @@
         <div class="form-group">
           <button name="submit" type="submit" class="btn btn-block btn-danger">Login</button>
         </div>
+        <div class="form-group">
+          <a href="{{url('/register')}}" class="btn btn-block btn-info ">Register</a>
+        </div>
     </form>
 </div>
 

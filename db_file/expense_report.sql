@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 26, 2020 at 09:50 PM
+-- Generation Time: Jun 27, 2020 at 02:45 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.31
 
@@ -59,7 +59,9 @@ INSERT INTO `expenses` (`id`, `details`, `amount`, `date`, `month`, `year`) VALU
 (21, 'keyboard', '200', '26/06/20', 'June', '2020'),
 (25, 'car', '250', '26/06/20', 'June', '2020'),
 (31, 'shirt', '500', '26/06/20', 'June', '2020'),
-(32, 'asfer', '2530', '26/06/20', 'June', '2020');
+(32, 'asfer', '2530000', '26/06/20', 'June', '2020'),
+(33, 'Pen', '150', '27/06/20', 'June', '2020'),
+(34, 'Note Books', '250', '27/06/20', 'June', '2020');
 
 -- --------------------------------------------------------
 
@@ -100,7 +102,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `password`, `address`, `email`) VALUES
-(1, 'User', '1234', 'Babor road, Mohammadpur, Dhaka', 'user@gmail.com');
+(1, 'User', '1234', 'Babor road, Mohammadpur, Dhaka', 'user@gmail.com'),
+(2, 'irfan ahmed', '9520', '13A/6A,Block-B,Babor road,Mohammadpur,Dhaka', 'irfan@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -132,7 +135,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `expenses`
 --
 ALTER TABLE `expenses`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -144,7 +147,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
